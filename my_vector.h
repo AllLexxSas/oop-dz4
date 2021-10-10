@@ -10,9 +10,13 @@ private:
 	int array_size = 0;
 	int array_campacity = 0;
 	int* arr;
+<<<<<<< HEAD
 	int number_length = 0;//переменна€ нужна дл€ оптимицазии блочной сортировки.
 	const int increment = 4; //количесво добавл€емых €чеик при увеличении массива. ј так же стартовое количество €чеик в векторе. 
 
+=======
+	const int start_increment = 4;
+>>>>>>> 06a874aad7c82ed67f785a03fc24ed74f655a652
 
 public:
 	my_vector() = default;
@@ -24,6 +28,7 @@ public:
 
 	bool push_back(int a)
 	{
+<<<<<<< HEAD
 		int _number_length = a == 0 ? 1 : static_cast<int>(log(abs(a)) + 1);
 		if (_number_length > number_length)
 			number_length = _number_length;
@@ -31,6 +36,11 @@ public:
 		if (!arr) {
 			arr = new int[increment];
 			array_campacity = increment;
+=======
+		if (!arr) {
+			arr = new int[start_increment];
+			array_campacity = start_increment;
+>>>>>>> 06a874aad7c82ed67f785a03fc24ed74f655a652
 		}
 		else
 		{
@@ -90,6 +100,7 @@ public:
 		int max = array_size;
 		const int _max = max;
 		int d = 10;
+<<<<<<< HEAD
 		//std::vector<std::vector<int>> temp_arra(d, std::vector<int>(max + 1));
 		int **temp_arra = new int*[d];
 
@@ -101,6 +112,16 @@ public:
 		int h = 0;
 
 		for (int j = 1; h <= number_length; j *= 10) {
+=======
+		std::vector<std::vector<int>> temp_arra(d, std::vector<int>(max + 1));
+
+		for (size_t i = 0; i < d; ++i)
+		{
+			temp_arra[i][max] = 0;
+		}
+
+		for (int j = 1; j < 1000000000; j *= 10) {
+>>>>>>> 06a874aad7c82ed67f785a03fc24ed74f655a652
 			for (int i = 0; i < array_size; i++)
 			{
 				int b = (arr[i] / j) % d;
@@ -118,7 +139,10 @@ public:
 				}
 				temp_arra[i][max] = 0;
 			}
+<<<<<<< HEAD
 			h++;
+=======
+>>>>>>> 06a874aad7c82ed67f785a03fc24ed74f655a652
 		}
 		return true;
 	}
@@ -144,16 +168,24 @@ void print_vector(my_vector& a)
 
 
 
+<<<<<<< HEAD
 int task1()
+=======
+int tack1()
+>>>>>>> 06a874aad7c82ed67f785a03fc24ed74f655a652
 {
 	my_vector v;
 
 	v.push_back(44);
 
+<<<<<<< HEAD
 
 	v.push_back(33);
     v.push_back(1234);
 
+=======
+	v.push_back(33);
+>>>>>>> 06a874aad7c82ed67f785a03fc24ed74f655a652
 	v.push_back(21);
 	v.push_back(56);
 	v.push_back(77);
